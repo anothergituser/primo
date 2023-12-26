@@ -27,13 +27,13 @@ async function rollup_worker({ component, hydrated, buildStatic = true, format =
 		let { html, css, js, data } = component
 		const data_as_variables = is_single
 			? Object.entries(data)
-					.filter((field) => field[0])
-					.map((field) => `export let ${field[0]};`)
-					.join(`\n`)
+				.filter((field) => field[0])
+				.map((field) => `export let ${field[0]};`)
+				.join(`\n`)
 			: Object.entries(data)
-					.filter((field) => field[0])
-					.map((field) => `let ${field[0]} = props['${field[0]}'];`)
-					.join(`\n`)
+				.filter((field) => field[0])
+				.map((field) => `let ${field[0]} = props['${field[0]}'];`)
+				.join(`\n`)
 
 		// Move <svelte:window> outside the encompassing <div> to prevent 'can't nest' error
 		if (html.includes('<svelte:window')) {
@@ -68,10 +68,10 @@ async function rollup_worker({ component, hydrated, buildStatic = true, format =
                 ${component.map((_, i) => `export let component_${i}_props`).join(`\n`)}
               </script>
               ${component
-								.map((section, i) => {
-									return `<Component_${i} props={component_${i}_props} /> \n`
-								})
-								.join('')}
+					.map((section, i) => {
+						return `<Component_${i} props={component_${i}_props} /> \n`
+					})
+					.join('')}
           `
 			)
 		} else {
@@ -115,6 +115,11 @@ async function rollup_worker({ component, hydrated, buildStatic = true, format =
 				{
 					name: 'repl-plugin',
 					async resolveId(importee, importer) {
+
+						if (importee === '@iconify/svelte/dist/Icon.svelte') {
+							importee = "@iconify/svelte";
+						}
+
 						// handle imports from 'svelte'
 
 						// import x from 'svelte'
