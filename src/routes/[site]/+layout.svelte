@@ -82,7 +82,7 @@
   })
 
   database_subscribe(async ({ table, action, data, id, match, order }) => {
-    console.log('Accessing database', { table, action, data, id, match, order })
+    // console.log('Accessing database', { table, action, data, id, match, order })
     let res
     if (action === 'insert') {
       res = await supabase.from(table).insert(data)
