@@ -1,6 +1,6 @@
 {
   "name": "primo-server",
-  "version": "2.0.0--dev.42",
+  "version": "2.0.0--dev.43",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
@@ -15,7 +15,7 @@
   "dependencies": {
     "@fontsource/fira-code": "^5.0.5",
     "@iconify/svelte": "^2.2.1",
-    "@primocms/builder": "anothergituser/builder#72d0b0c9b58cd32eb097ba0e3eee0b6d13a374ee",
+    "@primocms/builder": "anothergituser/builder#4d5929f6ee6ecebd6e320e759674467b54950ae7",
     "@rollup/browser": "^3.28.0",
     "@supabase/auth-helpers-sveltekit": "^0.10.2",
     "@supabase/supabase-js": "^2.31.0",
