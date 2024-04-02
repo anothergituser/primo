@@ -15,7 +15,7 @@
   "dependencies": {
     "@fontsource/fira-code": "^5.0.5",
     "@iconify/svelte": "^2.2.1",
-    "@primocms/builder": "anothergituser/builder#9a74b3eb498e8b837c55e76a73ebd6c1d296bd84",
+    "@primocms/builder": "anothergituser/builder#72d0b0c9b58cd32eb097ba0e3eee0b6d13a374ee",
     "@rollup/browser": "^3.28.0",
     "@supabase/auth-helpers-sveltekit": "^0.10.2",
     "@supabase/supabase-js": "^2.31.0",
