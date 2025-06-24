@@ -117,7 +117,7 @@ async function rollup_worker({ component, hydrated, buildStatic = true, format =
 					async resolveId(importee, importer) {
 
 						if (importee === '@iconify/svelte/dist/Icon.svelte') {
-							importee = "@iconify/svelte";
+							return `https://cdn.jsdelivr.net/npm/@iconify/svelte/dist/index.mjs`;
 						}
 
 						// handle imports from 'svelte'
