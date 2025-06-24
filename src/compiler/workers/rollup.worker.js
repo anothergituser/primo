@@ -116,7 +116,11 @@ async function rollup_worker({ component, hydrated, buildStatic = true, format =
 					name: 'repl-plugin',
 					async resolveId(importee, importer) {
 
+						// Handle @iconify/svelte imports
 						if (importee === '@iconify/svelte/dist/Icon.svelte') {
+							return `https://cdn.jsdelivr.net/npm/@iconify/svelte/dist/index.mjs`;
+						}
+						if (importee === '@iconify/svelte') {
 							return `https://cdn.jsdelivr.net/npm/@iconify/svelte/dist/index.mjs`;
 						}
 
