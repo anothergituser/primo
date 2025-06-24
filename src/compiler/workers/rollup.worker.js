@@ -116,12 +116,12 @@ async function rollup_worker({ component, hydrated, buildStatic = true, format =
 					name: 'repl-plugin',
 					async resolveId(importee, importer) {
 
-						// Handle @iconify/svelte imports
+						// Handle @iconify/svelte imports - pin to specific version
 						if (importee === '@iconify/svelte/dist/Icon.svelte') {
-							return `${CDN_URL}/@iconify/svelte@2.2.1/dist/index.js`;
+							importee = "@iconify/svelte@2.2.1";
 						}
 						if (importee === '@iconify/svelte') {
-							return `${CDN_URL}/@iconify/svelte@2.2.1/dist/index.js`;
+							importee = "@iconify/svelte@2.2.1";
 						}
 
 						// handle imports from 'svelte'
